@@ -7,9 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import KeychainSwift
 
 @main
 struct CoPlanrApp: App {
+    let keychain = KeychainSwift()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,7 +28,12 @@ struct CoPlanrApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if(keychain.getBool("isLoggedIn") ?? false) {
+                TabHolderView()
+            } else {
+                Welcome()
+            }
+            
         }
         .modelContainer(sharedModelContainer)
     }
