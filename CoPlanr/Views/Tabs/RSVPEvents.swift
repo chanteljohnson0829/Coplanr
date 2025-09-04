@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RSVPEvents: View {
-    @State private var events = [Event(eventID: UUID(), title: "City Marathon", description: "Join us for a marathon to support your local businesses.", date: Date.distantFuture, location: "13350 Dallas Pkwy, Dallas, TX 75240", createdBy: UUID(), image: "city3", venue: "The Galleria Dallas"), Event(eventID: UUID(), title: "My First Event", description: "This is my first event! I want everyone to come and have a great time!", date: Date.distantFuture, location: "1415 N Loop West Houston, TX 77008", createdBy: UUID(), image: "city", venue: "Trebly Park"), Event(eventID: UUID(), title: "R&B Party", description: "Come out and enjoy listening to all of your favorite R&B songs - classic and new!", date: Date.distantFuture, location: "5085 Westheimer Rd, Houston, TX 77056", createdBy: UUID(), image: "city2", venue: "MacGregor Park") ]
+    @State private var events = [Event(id: "12345", title: "City Marathon", description: "Join us for a marathon to support your local businesses.", venue: "Trembly Park", location: "1525 Fanin St, Houston, TX 77002", eventDate: Date.distantFuture, attendees: [], createdBy: Creator(id: "1234567890", name: "The RUn Club")), Event(id: "12345", title: "City Marathon", description: "Join us for a marathon to support your local businesses.", venue: "Trembly Park", location: "1525 Fanin St, Houston, TX 77002", eventDate: Date.distantFuture, attendees: [], createdBy: Creator(id: "1234567890", name: "Bugs Bunny")) ]
     
     @State private var searchText = ""
     @State private var searchResult: [Event] = []
